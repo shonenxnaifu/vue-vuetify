@@ -9,7 +9,6 @@
     <v-main>
       <v-row align="center" justify="center" class="fill-height">
         <v-col cols="12" md="4">
-          <!-- Slot for Login.vue component -->
           <router-view />
         </v-col>
       </v-row>

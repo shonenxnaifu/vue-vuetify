@@ -26,7 +26,7 @@ const routes = [
     path: "/",
     component: AdminLayout,
     meta: {
-      // layout: "AdminLayout",
+      layout: "AdminLayout",
       requiresAuth: true,
     },
     children: [

@@ -39,15 +39,19 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
-  name: 'AdminLayout',
+  name: "AdminLayout",
   mounted() {
-    console.log('AdminLayout mounted'); // Check if the layout is mounted
+    console.log("AdminLayout mounted");
   },
   methods: {
+    ...mapActions("auth", ["logout"]),
     logout() {
-      this.$store.dispatch('logout');
-      this.$router.push('/login'); // Redirect to login after logout
+      this.$store.dispatch("auth/logout").then(() => {
+        this.$router.push("/login");
+      });
     },
   },
 };
