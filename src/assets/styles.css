@@ -1,0 +1,13 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.v-container {
+  max-width: 600px;
+  margin: auto;
+  padding-top: 2rem;
+}
+
+.v-btn {
+  margin-top: 1rem;
+}

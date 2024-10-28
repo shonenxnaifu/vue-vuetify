@@ -1,30 +1,28 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <v-app>
+    <component :is="layoutComponent">
+      <router-view />
+    </component>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+// import LoginLayout from './layouts/LoginLayout.vue';
+// import AdminLayout from './layouts/AdminLayout.vue';
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default {
+  name: 'App',
+  // components: {
+  //   LoginLayout,
+  //   AdminLayout,
+  // },
+  computed: {
+    layoutComponent() {
+      // Dynamically return the layout component based on the route meta property
+      // const layout = this.$route.meta.layout;
+      // return layout === 'LoginLayout' ?  LoginLayout : AdminLayout;
+      return "LoginLayout"
+    },
+  },
+};
+</script>
